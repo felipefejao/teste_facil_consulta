@@ -39,5 +39,5 @@ Route::middleware('api')->post('/medicos/{id_medico}/pacientes', [MedicoPaciente
 
 Route::middleware('api')->post('/pacientes', [PacienteController::class, 'create'])->name('pacientes-create');
 Route::middleware('api')->post('/pacientes/{pacienteId}', [PacienteController::class, 'update'])->name('pacientes-update');
-Route::get('/pacientes', [PacienteController::class, 'list'])->name('get-pacientes');
+Route::middleware('api')->get('/pacientes', [PacienteController::class, 'list'])->name('get-pacientes');
 
